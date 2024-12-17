@@ -98,7 +98,6 @@ def main():
 
         hangmanWords = load_words('HangmanWords.txt') # Load words from the HangmanWords.txt file
         chosenWord = random.choice(hangmanWords)
-        # print(chosenWord)
         chosenWordProgress = list('_' * len(chosenWord))
 
         stop_background_music()
