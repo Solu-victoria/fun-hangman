@@ -1,5 +1,3 @@
-### README for Hangman Game
-
 # Hangman Game 🎮
 
 This is a fun, interactive console-based Hangman game built with Python. It incorporates sound effects using the `pygame` library to enhance the gaming experience. Players try to guess a randomly chosen word, one letter at a time, while keeping their lives intact!
