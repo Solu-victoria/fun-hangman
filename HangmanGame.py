@@ -127,7 +127,7 @@ def displayLeaderboard():
     print("| Trial # | Difficulty Level | Word | Lives Left | Wrong Guesses No. | Judgement     |")
     print("+---------+------------------+------+------------+-------------------+---------------+")
     for trial in leaderboard['trials_details']:
-        print(f"|    {trial['trialNo']}    |    {trial['difficultyLevel']:>13} |{trial['word']:>13}|     {trial['livesLeft']}      |         {trial['wrongGuessesNo']}         | {trial['judgement']:>13} |")
+        print(f"|    {trial['trialNo']}    |    {trial['difficultyLevel']:>13} |{trial['word']}|     {trial['livesLeft']}      |         {trial['wrongGuessesNo']}         | {trial['judgement']:>13} |")
     print("+---------+------------------+------------+------------+-------------------+---------------+\n")
 
 def main():
