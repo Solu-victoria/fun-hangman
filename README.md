@@ -1,5 +1,4 @@
 # Hangman Game
----
 
 ## Features
 
