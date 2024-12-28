@@ -5,7 +5,8 @@
 - add 'no' sound effect when leaving in two places (done)
 - Difficulty levels (done)
 - show wrong guesses for easy level (done)
-- Single user Leader board (based on trials) containing scoring based on lives left, time taken, or number of incorrect guesses, and show a high-score table. (done)
+- Single user Leader board (based on trials) containing scoring based on lives left, time taken, or number of incorrect guesses. (done)
 
 ## Rooms for improvement
 - Improving its visuals using pygame GUI
+- Quantify game trials with scores and put the score per trial in the leaderboard

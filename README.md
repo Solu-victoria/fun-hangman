@@ -1,23 +1,27 @@
-# Hangman Game 🎮
-
-This is a fun, interactive console-based Hangman game built with Python. It incorporates sound effects using the `pygame` library to enhance the gaming experience. Players try to guess a randomly chosen word, one letter at a time, while keeping their lives intact!
-
+# Hangman Game
 ---
 
 ## Features
 
-- **Sound Effects:** Correct guesses, wrong guesses, and other game events are accompanied by sound effects.
-- **Background Music:** Engaging background music plays throughout the game.
-- **Dynamic Gameplay:** The game updates the progress of the guessed word in real time.
-- **Replay Option:** Players can choose to replay or exit after a game ends.
-- **Word Pool:** Words are loaded dynamically from a file (`HangmanWords.txt`).
+### 🎵 **Audio Enhancements**
+- Sound effects for correct and incorrect guesses, wins, and game overs.
+- **Holiday Special:** A festive soundtrack for the holiday season (Dec 10 - Jan 10).
+  
+### 📝 **Gameplay Features**
+- Difficulty Levels: Choose between Easy, Medium, or Hard.
+- Progress Tracker: Updates the guessed word in real-time.
+- Replay Option: Play again or exit after completing a game.
+- **Leaderboard:** Tracks your game history, including wins, losses, and detailed trial stats.
+
+### 📁 **Dynamic Word Loading**
+- Words are loaded from separate files for each difficulty level (`EasyHangmanWords.txt`, `MedHangmanWords.txt`, `HardHangmanWords.txt`).
 
 ---
 
 ## Requirements
 
 - Python 3.6 or higher
-- `pygame` library
+- `pygame` library for sound effects and background music
 
 ---
 
@@ -30,15 +34,15 @@ cd fun-hangman
 ```
 
 ### 2. Install Dependencies
-Install `pygame`, the library used for sound and music, via `pip`:
+Install `pygame`:
 ```bash
 pip install pygame
 ```
 
 ### 3. Ensure Files Are Present
-- **Word File:** Make sure `HangmanWords.txt` (containing the word list) is in the project directory.
-- **Sound Files:** Ensure all sound files (e.g., `sounds/correct.mp3`, `sounds/wrong.mp3`) are in the `sounds/` folder.
-- **Art File:** Ensure the `HangmanArt.py` file is present for displaying the Hangman stages.
+- **Word Files:** Ensure `EasyHangmanWords.txt`, `MedHangmanWords.txt`, and `HardHangmanWords.txt` are in the `assets/words` directory.
+- **Sound Files:** Verify the presence of sound effects (`correct.mp3`, `wrong.mp3`, etc.) in the `assets/music` directory.
+- **Art File:** Ensure `HangmanArt.py` is in the `assets` folder.
 
 ---
 
@@ -46,62 +50,104 @@ pip install pygame
 
 1. Run the game:
    ```bash
-   python HangmanGame.py
+   python hangman.py
    ```
-2. The game will:
-   - Play a short intro sound and display the welcome screen.
-   - Randomly select a word from the `HangmanWords.txt` file for you to guess.
-3. Input a single letter at a time.
-4. The game provides feedback:
+2. Pick a difficulty level:
+   - `e` for Easy  
+   - `m` for Medium  
+   - `h` for Hard  
+3. Guess the word:
+   - Enter a single letter to guess.
+   - Type `exit` to leave the game early.
+4. Game Feedback:
    - Correct guesses reveal letters in the word.
-   - Incorrect guesses reduce your lives by 1.
-   - You win if you guess all letters before running out of lives.
-5. Exit the game anytime by typing `exit`.
+   - Incorrect guesses reduce lives and display a Hangman stage.
+5. Win/Loss:
+   - Win by guessing all letters correctly before running out of lives.
+   - Lose if your lives reach zero.
+6. Replay or Exit:
+   - After the game ends, choose to replay (`y`) or exit (`n`).
 
 ---
 
 ## Game Controls
 
-- **Guess a Letter:** Input a single letter.
-- **Exit Game:** Type `exit` when prompted to guess a letter.
-- **Replay Game:** After a game ends, input `y` to replay or `n` to quit.
+| **Action**       | **Input**                             |
+|-------------------|---------------------------------------|
+| Guess a Letter    | Type any single letter               |
+| Exit Game         | Type `exit`                         |
+| Confirm Exit      | Type `y` (yes) or `n` (no)          |
+| Replay Game       | Type `y` (yes) or `n` (no)          |
 
 ---
 
-## Game Files Structure
+## Leaderboard
 
-```
-Hangman_Game/
-├── HangmanArt.py          # Contains ASCII art for Hangman
-├── HangmanWords.txt       # Word list for the game
-├── sounds/                # Folder containing sound effects
-│   ├── correct.mp3
-│   ├── wrong.mp3
-│   ├── gameover.flac
-│   ├── win.mp3
-│   ├── try_again.mp3
-│   ├── background.mp3
-│   └── waiting.mp3
-└── hangman.py             # Main Python script
-```
+The game tracks your performance and displays a detailed leaderboard at the end. Here's what it includes:
+- **Summary:**
+  - Total games played
+  - Number of wins and losses
+- **Trial Details:**  
+  For each game:
+  - Trial number
+  - Difficulty level
+  - Lives left
+  - Number of wrong guesses
+  - Outcome (win or loss)
+  - Word guessed
 
 ---
 
 ## Troubleshooting
 
-1. **Pygame Not Installed:**  
-   If `pygame` is not found, ensure you've installed it using:
-   ```bash
-   pip install pygame
-   ```
+1. **Missing Word Files:**
+   - Ensure the required word files are present in `assets/words`.
+   - The game cannot start without these files.
 
-2. **Sound Not Playing:**  
-   - Check if the `sounds/` directory exists and contains the required sound files.
-   - Ensure your computer's audio is enabled and volume is turned up.
+2. **Sound Issues:**
+   - Check the `assets/music` folder for sound files.
+   - Ensure your system audio is working.
 
-3. **File Not Found Errors:**  
-   Verify that `HangmanWords.txt` and `HangmanArt.py` are in the same directory as the main script.
+3. **Pygame Errors:**
+   - Verify `pygame` installation:
+     ```bash
+     pip install pygame
+     ```
 
 ---
 
-### Enjoy the Game! 🎉
+## File Structure
+
+```
+fun-hangman/
+├── assets/
+│   ├── music/
+│   │   ├── background.mp3
+│   │   ├── backgroundChristmas.mp3
+│   │   ├── correct.mp3
+│   │   ├── gameover.flac
+│   │   ├── try_again.mp3
+│   │   ├── waiting.mp3
+│   │   └── win.mp3
+│   ├── words/
+│   │   ├── EasyHangmanWords.txt
+│   │   ├── MedHangmanWords.txt
+│   │   └── HardHangmanWords.txt
+│   └── HangmanArt.py
+├── LICENSE
+├── TODO.md
+├── index.py
+└── README.md
+```
+---
+
+## Important Warning ⚠️
+Ensure that you are in the **fun-hangman** directory before running the game.  
+Running the game from a different directory may result in **File Not Found** or other errors due to missing assets like words, music, or art.
+
+---
+
+## LICENSE
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+--- 
